@@ -229,5 +229,3 @@ vendor/bin/codecept run unit -- --coverage-html --coverage-xml
 #collect coverage for unit and functional tests
 vendor/bin/codecept run functional,unit -- --coverage-html --coverage-xml
 ```
-
-You can see code coverage output under the `tests/_output` directory.
