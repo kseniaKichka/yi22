@@ -9,16 +9,10 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
-print_r($model);
+$this->title = "Edit Page About";
 
 ?>
-<?php if (Yii::$app->session->hasFlash('success')): ?>
-    <div class="alert alert-success alert-dismissable">
-        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-        <h4><i class="icon fa fa-check"></i>Saved!</h4>
-        <?= Yii::$app->session->getFlash('success') ?>
-    </div>
-<?php endif; ?>
+
 <h1>Edit</h1>
 <div class="row-fluid">
     <div class="block">
@@ -28,24 +22,29 @@ print_r($model);
         <div class="block-content collapse in">
             <div class="span12">
                 <?php $form = ActiveForm::begin(['options' => ['class' => 'form-horizontal']]); ?>
-                    <legend>Form Components</legend>
+                    <legend><?= $titleForm ?></legend>
                     <div class="controls">
-                        <?= $form->field($model, 'titlePage')->textInput(['class' => 'span6', ])->label('Title') ?>
+                        <?= $form->field($model, 'titlePage')->textInput(['class' => 'span6', ]) ?>
                     </div>
                     <div class="controls">
-                        <?= $form->field($model, 'descriptionPage')->textInput(['class' => 'span6'])->label('Description') ?>
+                        <?= $form->field($model, 'descriptionPage')->textInput(['class' => 'span6']) ?>
                     </div>
-<!--<div class="controls">-->
-<!--</div>-->
-<!--<div class="controls">-->
-<!--</div>-->
-<!--<div class="controls">-->
-<!--</div>-->
-<!--<div class="controls">-->
-<!--</div>-->
-<!--<div class="controls">-->
-<!--</div>-->
-                    <?= Html::submitButton('Sign in', ['class' => 'btn btn-large btn-primary']) ?>
+                    <div class="controls">
+                        <?= $form->field($model, 'leftColumn')->textarea(['rows' => '8', 'class' => 'span6']) ?>
+                    </div>
+                    <div class="controls">
+                        <?= $form->field($model, 'centrColumn')->textarea(['rows' => '8', 'class' => 'span6']) ?>
+                    </div>
+                    <div class="controls">
+                        <?= $form->field($model, 'rightColumn')->textarea(['rows' => '8', 'class' => 'span6']) ?>
+                    </div>
+                    <div class="controls">
+                        <?= $form->field($model, 'bigText')->textarea(['rows' => '8', 'class' => 'span6']) ?>
+                    </div>
+<!--                    <div class="controls">-->
+<!--                        --><?php // echo $form->field($model, 'image')->fileInput() ?>
+<!--                    </div>-->
+                    <?= Html::submitButton('Save', ['class' => 'btn btn-large btn-primary']) ?>
                 <?php ActiveForm::end(); ?>
             </div>
         </div>

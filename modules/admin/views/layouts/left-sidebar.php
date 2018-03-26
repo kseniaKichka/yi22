@@ -17,7 +17,6 @@ use yii\widgets\Menu;
         'items' => [
             ['label' => '<i class="icon-chevron-right"></i> Home', 'url' => ['/admin/home']],
             ['label' => '<i class="icon-chevron-right"></i> About', 'url' => ['/admin/about']],
-            ['label' => '<i class="icon-chevron-right"></i> About Edit Page', 'url' => ['/admin/about/edit']],
             ['label' => '<i class="icon-chevron-right"></i> Contact', 'url' => ['/admin/contact']],
 
         ],

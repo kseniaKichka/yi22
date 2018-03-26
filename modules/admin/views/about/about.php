@@ -7,7 +7,7 @@
  */
 
 use yii\helpers\Url;
-print_r($info);
+
 ?>
 <h1>About</h1>
 <div class="row-fluid">
@@ -23,6 +23,7 @@ print_r($info);
                     <tr>
                         <th>Title</th>
                         <th>Description</th>
+                        <th>Text near picture</th>
                         <th>Left Column</th>
                         <th>Center Column</th>
                         <th>Right Column</th>
@@ -33,9 +34,10 @@ print_r($info);
                     <tr>
                         <td><?= $info->titlePage ?></td>
                         <td><?= $info->descriptionPage ?></td>
+                        <td><?= $info->bigText ?></td>
                         <td><?= $info->leftColumn ?></td>
-                        <td>@<?= $info->centrColumn ?></td>
-                        <td>@<?= $info->rightColumn ?></td>
+                        <td><?= $info->centrColumn ?></td>
+                        <td><?= $info->rightColumn ?></td>
                         <td><a href="<?= Url::to('/admin/about/edit')?>">Edit</a></td>
                     </tr>
                     </tbody>

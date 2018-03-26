@@ -11,24 +11,53 @@ namespace app\modules\admin\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use yii\web\UploadedFile;
 
 class About extends ActiveRecord {
 
-    public $titlePage;
-    public $descriptionPage;
 
     public function rules() {
         return [
             ['titlePage', 'required', 'message' => 'Please enter a title'],
+            ['leftColumn', 'required', 'message' => 'Please enter a title'],
+            ['centrColumn', 'required', 'message' => 'Please enter a title'],
+            ['rightColumn', 'required', 'message' => 'Please enter a title'],
+            ['bigText', 'required', 'message' => 'Please enter a title'],
+            ['image', 'file', 'skipOnEmpty' => false, 'extensions' => 'jpg'],
+            ['descriptionPage', 'required', 'message' => 'Please enter a title'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'titlePage' => 'Title for page',
+            'leftColumn' => 'Text for left colummn',
+            'centrColumn' => 'Text for center colummn',
+            'rightColumn' => 'Text for right column',
+            'image' => 'Image',
+            'descriptionPage' => 'Description',
+            'bigText' => 'Text near a picture',
         ];
     }
 
     public static function tableName()
     {
-        return '{{aboutPage}}';
+        return '{{%aboutPage}}';
     }
     
     public static function getInfo() {
         return self::find()->one();
     }
+
+//    public function upload()
+//    {
+//
+//        if ($this->validate()) {
+//                $this->image->saveAs('uploads/' . $this->image->baseName . '.' . $this->image->extension);
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 }

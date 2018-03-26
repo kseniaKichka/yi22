@@ -15,13 +15,13 @@ AdminAsset::register($this);
     <html class="no-js">
 
 <head>
-    <title>Admin Home Page</title>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 
@@ -33,13 +33,13 @@ AdminAsset::register($this);
         <?= $this->render('@app/modules/admin/views/layouts/left-sidebar') ?>
         <!--/span-->
         <div class="span9" id="content">
-            <div class="row-fluid">
-                <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <h4>Success</h4>
-                    The operation completed successfully</div>
-                <?= $this->render('@app/modules/admin/views/layouts/breadcrumbs') ?>
-            </div>
+            <?php if (Yii::$app->session->hasFlash('success')): ?>
+                <div class="alert alert-success alert-dismissable">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    <h4><i class="icon fa fa-check"></i>Saved!</h4>
+                    <?= Yii::$app->session->getFlash('success') ?>
+                </div>
+            <?php endif; ?>
             <?= $content ?>
         </div>
     </div>

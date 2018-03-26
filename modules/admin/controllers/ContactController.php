@@ -15,8 +15,11 @@ use yii\web\Controller;
 
 class ContactController extends BaseController {
 
-    public function actionIndex()
-    {
+    public function actionIndex() {
         return $this->render('contact');
+    }
+
+    public function actionEdit() {
+
     }
 }
