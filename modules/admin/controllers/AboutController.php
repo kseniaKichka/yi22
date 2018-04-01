@@ -15,6 +15,7 @@ use yii\web\Controller;
 use app\modules\admin\models\About;
 use yii\web\UploadedFile;
 
+
 class AboutController extends BaseController {
 
     
@@ -35,10 +36,13 @@ class AboutController extends BaseController {
         $model = About::getInfo();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-//            $model->image = UploadedFile::getInstances($model, 'image');
-//            if ($model->upload()) {
+            $model->image = UploadedFile::getInstance($model, 'image');
+            if ($model->upload()) {
+                $model->image = $model->image->name;
+
+                $model->save();
                 Yii::$app->session->setFlash('success', 'Ok');
-//            }
+            }
         }
         return $this->render('edit-about',  ['model' => $model, 'titleForm' => "Edit Form"]);
     }

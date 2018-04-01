@@ -41,9 +41,9 @@ $this->title = "Edit Page About";
                     <div class="controls">
                         <?= $form->field($model, 'bigText')->textarea(['rows' => '8', 'class' => 'span6']) ?>
                     </div>
-<!--                    <div class="controls">-->
-<!--                        --><?php // echo $form->field($model, 'image')->fileInput() ?>
-<!--                    </div>-->
+                    <div class="controls">
+                        <?php  echo $form->field($model, 'image')->fileInput() ?>
+                    </div>
                     <?= Html::submitButton('Save', ['class' => 'btn btn-large btn-primary']) ?>
                 <?php ActiveForm::end(); ?>
             </div>

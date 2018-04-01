@@ -17,23 +17,25 @@ class AdminLogin extends Model {
 
     public $email;
     public $password;
-    public $rememberMe;
+    public $rememberMe = false;
     public $user = false;
+    public $duration;
 
     public function rules() {
 
         return [
             ['email', 'required', 'message' => 'Please enter a email.'],
             ['password', 'required', 'message' => 'Please enter a password.'],
+            ['rememberMe', 'boolean'],
+            ['duration', 'integer'],
         ];
     }
     
     public function login() {
-
+//        $this->duration = $this->rememberMe ? (1 * 60) : 0;
         if ($this->validate()) {
-//            var_dump(\Yii::$app->user->login($this->getUser())); die;
 
-                return \Yii::$app->user->login($this->getUser());
+                return \Yii::$app->user->login($this->getUser(), $this->duration);
         }
         return false;
     }

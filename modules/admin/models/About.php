@@ -15,6 +15,8 @@ use yii\web\UploadedFile;
 
 class About extends ActiveRecord {
 
+    private $directory = "uploads/";
+    private $folder = "pages/";
 
     public function rules() {
         return [
@@ -23,7 +25,7 @@ class About extends ActiveRecord {
             ['centrColumn', 'required', 'message' => 'Please enter a title'],
             ['rightColumn', 'required', 'message' => 'Please enter a title'],
             ['bigText', 'required', 'message' => 'Please enter a title'],
-//            ['image', 'file', 'skipOnEmpty' => false, 'extensions' => 'jpg'],
+            ['image', 'file', 'extensions' => 'jpg'],
             ['descriptionPage', 'required', 'message' => 'Please enter a title'],
         ];
     }
@@ -35,7 +37,7 @@ class About extends ActiveRecord {
             'leftColumn' => 'Text for left colummn',
             'centrColumn' => 'Text for center colummn',
             'rightColumn' => 'Text for right column',
-//            'image' => 'Image',
+            'image' => 'Image',
             'descriptionPage' => 'Description',
             'bigText' => 'Text near a picture',
         ];
@@ -54,14 +56,20 @@ class About extends ActiveRecord {
         return $this::find()->one();
     }
 
-//    public function upload()
-//    {
-//
-//        if ($this->validate()) {
-//                $this->image->saveAs('uploads/' . $this->image->baseName . '.' . $this->image->extension);
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
+    public function upload()
+    {
+        $this->createDirectory($this->directory, $this->folder);
+        if ($this->validate($this->image)) {
+                $this->image->saveAs($this->directory . $this->folder . $this->image->baseName . '.' . $this->image->extension);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private function createDirectory($directory, $folder) {
+        if (!file_exists($directory . $folder)) {
+            mkdir($directory . $folder, 0777, true);
+        }
+    }
 }
