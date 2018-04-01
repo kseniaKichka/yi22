@@ -13,7 +13,7 @@ $this->title = "Edit Page About";
 
 ?>
 
-<h1>Edit</h1>
+<h1><?= $titleForm ?></h1>
 <div class="row-fluid">
     <div class="block">
         <div class="navbar navbar-inner block-header">
@@ -22,7 +22,7 @@ $this->title = "Edit Page About";
         <div class="block-content collapse in">
             <div class="span12">
                 <?php $form = ActiveForm::begin(['options' => ['class' => 'form-horizontal']]); ?>
-                    <legend><?= $titleForm ?></legend>
+                    <legend>Enter information into fields</legend>
                     <div class="controls">
                         <?= $form->field($model, 'titlePage')->textInput(['class' => 'span6', ]) ?>
                     </div>

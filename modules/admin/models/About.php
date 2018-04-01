@@ -23,7 +23,7 @@ class About extends ActiveRecord {
             ['centrColumn', 'required', 'message' => 'Please enter a title'],
             ['rightColumn', 'required', 'message' => 'Please enter a title'],
             ['bigText', 'required', 'message' => 'Please enter a title'],
-            ['image', 'file', 'skipOnEmpty' => false, 'extensions' => 'jpg'],
+//            ['image', 'file', 'skipOnEmpty' => false, 'extensions' => 'jpg'],
             ['descriptionPage', 'required', 'message' => 'Please enter a title'],
         ];
     }
@@ -35,7 +35,7 @@ class About extends ActiveRecord {
             'leftColumn' => 'Text for left colummn',
             'centrColumn' => 'Text for center colummn',
             'rightColumn' => 'Text for right column',
-            'image' => 'Image',
+//            'image' => 'Image',
             'descriptionPage' => 'Description',
             'bigText' => 'Text near a picture',
         ];
@@ -48,6 +48,10 @@ class About extends ActiveRecord {
     
     public static function getInfo() {
         return self::find()->one();
+    }
+
+    public function getModel() {
+        return $this::find()->one();
     }
 
 //    public function upload()
