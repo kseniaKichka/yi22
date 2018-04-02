@@ -20,6 +20,7 @@ class AdminLogin extends Model {
     public $rememberMe = false;
     public $user = false;
     public $duration;
+    public $auth_key;
 
     public function rules() {
 
@@ -32,7 +33,7 @@ class AdminLogin extends Model {
     }
     
     public function login() {
-//        $this->duration = $this->rememberMe ? (1 * 60) : 0;
+        $this->duration = $this->rememberMe ? (1 * 60) : 0;
         if ($this->validate()) {
 
                 return \Yii::$app->user->login($this->getUser(), $this->duration);

@@ -26,7 +26,6 @@ class LoginController extends SiteController{
             return $this->redirect(Url::to('/admin/home'));
         }
 
-
         $model = new AdminLogin();
 
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
