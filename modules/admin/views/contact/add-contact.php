@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: ksu
- * Date: 08.03.18
- * Time: 12:20
+ * Date: 06.03.18
+ * Time: 19:42
  */
 
+use yii\helpers\Url;
+
 ?>
-
-<h1>Contact</h1>
-
+<h1>About</h1>
 <div class="row-fluid">
     <!-- block -->
     <div class="block">
@@ -30,11 +30,8 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><?= $model->titlePage ?></td>
-                        <td><?= $model->descriptionPage ?></td>
-                        <td><?= $model->smallTitlePage ?></td>
-                        <td><?= $model->coordinats ?></td>
-                        <td><a href="<?= \yii\helpers\Url::to('/admin/contact/edit')?>">Edit</a></td>
+                        Information is not exist.
+                        <a href="<?= Url::to('/admin/contact/add')?>">Create now!</a>
                     </tr>
                     </tbody>
                 </table>
