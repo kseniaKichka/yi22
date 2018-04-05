@@ -27,7 +27,9 @@ class LoginController extends SiteController{
         }
 
         $model = new AdminLogin();
-
+        \Yii::$app->language = 'ru-RU';
+//        echo \Yii::$app->language; die;
+//var_dump(\Yii::$app->i18n); die;
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->redirect(Url::to('/admin/home'));
         } else {

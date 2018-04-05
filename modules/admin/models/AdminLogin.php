@@ -25,7 +25,7 @@ class AdminLogin extends Model {
     public function rules() {
 
         return [
-            ['email', 'required', 'message' => 'Please enter a email.'],
+            ['email', 'required', 'message' => Yii::t('app', 'Please enter a email.')],
             ['password', 'required', 'message' => 'Please enter a password.'],
             ['rememberMe', 'boolean'],
             ['duration', 'integer'],
