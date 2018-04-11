@@ -19,9 +19,11 @@ $config = [
             'cookieValidationKey' => 'ZjwBdgfCN8t1Hn9KGiLJbA2yzw6eAb-A',
         ],
         'session' => [
-            'class' => 'yii\web\DbSession',
-             'db' => 'db',  // ID компонента для взаимодействия с БД. По умолчанию 'db'.
-             'sessionTable' => 'session', // название таблицы для хранения данных сессии. По умолчанию 'session'.
+            'class' => 'yii\web\Session',
+            'timeout'=>3600,
+//            'class' => 'yii\web\DbSession',
+//             'db' => 'db',  // ID компонента для взаимодействия с БД. По умолчанию 'db'.
+//             'sessionTable' => 'session', // название таблицы для хранения данных сессии. По умолчанию 'session'.
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -95,7 +97,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['127.0.0.1', '127.0.1.1', '::1'],
     ];
 
     $config['bootstrap'][] = 'gii';

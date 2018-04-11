@@ -37,12 +37,14 @@ class AboutController extends BaseController {
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $model->image = UploadedFile::getInstance($model, 'image');
-            if ($model->upload()) {
-                $model->image = $model->image->name;
-
-                $model->save();
-                Yii::$app->session->setFlash('success', 'Ok');
+            if ($model->image) {
+                if ($model->upload()) {
+                    $model->image = $model->image->name;
+                    $model->save();
+                    Yii::$app->session->setFlash('success_img', 'File is uploaded');
+                }
             }
+            Yii::$app->session->setFlash('success', 'Ok');
         }
         return $this->render('edit-about',  ['model' => $model, 'titleForm' => "Edit Form"]);
     }

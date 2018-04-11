@@ -14,7 +14,7 @@ class m180405_035653_create_session_table extends Migration
     {
         $this->createTable('session', [
             'id' => $this->char(40),
-            'expire' => $this->integer()->primaryKey(),
+            'expire' => $this->primaryKey(),
             'data' => $this->text(),
         ]);
     }

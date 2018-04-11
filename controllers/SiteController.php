@@ -2,10 +2,12 @@
 
 namespace app\controllers;
 
+use app\models\query\ContactFormQuery;
 use app\modules\admin\models\About;
 use app\modules\admin\models\Contact;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -107,18 +109,21 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-//        $model = new ContactForm();
+        $model = new ContactForm();
         $page = Contact::getInfo();
         $page->coordinats = Contact::getCoord($page->coordinats);
-//        echo "<pre>";
-//        var_dump($page); die;
-//        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-//            Yii::$app->session->setFlash('contactFormSubmitted');
-//
-//            return $this->refresh();
-//        }
+
+        if ($model->load(Yii::$app->request->post())) {
+            $form = new ContactFormQuery();
+            if ($form->insertForm(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+                Yii::$app->session->setFlash('messageSent', 'Your message has been sent.');
+                return $this->redirect(['site/contact']);
+            }
+
+        }
         return $this->render('contact', [
             'model' => $page,
+            'contactForm' => $model,
         ]);
     }
 
