@@ -22,30 +22,14 @@ use yii\bootstrap\NavBar;
                 echo Nav::widget([
                     'options' => ['class' => 'nav navbar-nav'],
                     'items' => [
-                        ['label' => 'Home', 'url' => ['site/index']],
-                        ['label' => 'About', 'url' => ['site/about']],
-                        ['label' => 'Contact', 'url' => ['site/contact']],
+                        ['label' => \Yii::t('app', 'Home'), 'url' => ['site/index']],
+                        ['label' => \Yii::t('app', 'About'), 'url' => ['site/about']],
+                        ['label' => \Yii::t('app', 'Contact'), 'url' => ['site/contact']],
 
                     ],
                 ]);
                 NavBar::end();
                 ?>
-<!--                <ul class="nav navbar-nav">-->
-<!--                    <li class="active"><a href="index.html">Home</a></li>-->
-<!--                    <li class="dropdown">-->
-<!--                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us <b class="caret"></b></a>-->
-<!--                        <ul class="dropdown-menu">-->
-<!--                            <li><a href="about.html">Company</a></li>-->
-<!--                            <li><a href="#">Our Team</a></li>-->
-<!--                            <li><a href="#">News</a></li>-->
-<!--                            <li><a href="#">Investors</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="services.html">Services</a></li>-->
-<!--                    <li><a href="portfolio.html">Portfolio</a></li>-->
-<!--                    <li><a href="pricing.html">Pricing</a></li>-->
-<!--                    <li><a href="contact.html">Contact</a></li>-->
-<!--                </ul>-->
             </div>
         </div>
     </div>

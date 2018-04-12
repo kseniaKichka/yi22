@@ -11,7 +11,7 @@ $this->title = 'My Yii Application';
     <div id="main-slider" class="flexslider">
         <ul class="slides">
             <li>
-                <img src="img/slides/1.jpg" alt="" />
+                <img src="/img/slides/1.jpg" alt="" />
                 <div class="flex-caption">
                     <h3>Creative</h3>
                     <p>We create the opportunities</p>
@@ -19,7 +19,7 @@ $this->title = 'My Yii Application';
                 </div>
             </li>
             <li>
-                <img src="img/slides/2.jpg" alt="" />
+                <img src="/img/slides/2.jpg" alt="" />
                 <div class="flex-caption">
                     <h3>Solution</h3>
                     <p>Success depends on work</p>
@@ -35,7 +35,7 @@ $this->title = 'My Yii Application';
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-sm-9">
-                <h3>Best Business consulting</h3>
+                <h3><?= \Yii::t('app', 'Best Business consulting') ?></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti</p>
             </div>
             <div class="col-md-2 col-sm-3">
@@ -51,7 +51,7 @@ $this->title = 'My Yii Application';
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="aligncenter"><h2 class="aligncenter">Our Services</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt..</div>
+                <div class="aligncenter"><h2 class="aligncenter"><?= \Yii::t('app', 'Our Services') ?></h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt..</div>
                 <br/>
             </div>
         </div>
@@ -110,7 +110,7 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title text-center">
-                    <h2>Our Organization</h2>
+                    <h2><?= \Yii::t('app', 'Our Organization') ?></h2>
                     <p>Curabitur aliquet quam id dui posuere blandit. Donec sollicitudin molestie malesuada Pellentesque <br>ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
                 </div>
             </div>
@@ -131,7 +131,7 @@ $this->title = 'My Yii Application';
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="about-image">
-                    <img src="img/about.png" alt="About Images">
+                    <img src="/img/about.png" alt="About Images">
                 </div>
             </div>
         </div>
@@ -146,13 +146,13 @@ $this->title = 'My Yii Application';
             <div class="col-md-4">
                 <!-- Heading and para -->
                 <div class="block-heading-two">
-                    <h3><span>Programes</span></h3>
+                    <h3><span><?= \Yii::t('app', 'Programes') ?></span></h3>
                 </div>
                 <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br><br>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p>
             </div>
             <div class="col-md-4">
                 <div class="block-heading-two">
-                    <h3><span>Latest News</span></h3>
+                    <h3><span><?= \Yii::t('app', 'Latest News') ?></span></h3>
                 </div>
                 <!-- Accordion starts -->
                 <div class="panel-group" id="accordion-alt3">
@@ -222,13 +222,13 @@ $this->title = 'My Yii Application';
 
             <div class="col-md-4">
                 <div class="block-heading-two">
-                    <h3><span>Testimonials</span></h3>
+                    <h3><span><?= \Yii::t('app', 'Testimonials') ?></span></h3>
                 </div>
                 <div class="testimonials">
                     <div class="active item">
                         <blockquote><p>Lorem ipsum dolor met consectetur adipisicing. Aorem psum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
                         <div class="carousel-info">
-                            <img alt="" src="img/team4.jpg" class="pull-left">
+                            <img alt="" src="/img/team4.jpg" class="pull-left">
                             <div class="pull-left">
                                 <span class="testimonials-name">Marc Cooper</span>
                                 <span class="testimonials-post">Technical Director</span>

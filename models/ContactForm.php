@@ -34,9 +34,9 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'email' => 'Your Email',
-            'fullname' => 'Your Fullname',
-            'message' => 'Your message',
+            'email' => \Yii::t('app', 'Your Email'),
+            'fullname' => \Yii::t('app', 'Your Fullname'),
+            'message' => \Yii::t('app', 'Your message'),
         ];
     }
 

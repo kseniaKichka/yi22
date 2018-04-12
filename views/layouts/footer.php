@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-3">
                 <div class="widget">
-                    <h5 class="widgetheading">Our Contact</h5>
+                    <h5 class="widgetheading"><?= \Yii::t('app', 'Our Contact') ?></h5>
                     <address>
                         <strong>Bootstrap company Inc</strong><br>
                         JC Main Road, Near Silnile tower<br>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-3 col-sm-3">
                 <div class="widget">
-                    <h5 class="widgetheading">Quick Links</h5>
+                    <h5 class="widgetheading"><?= \Yii::t('app', 'Quick Links') ?></h5>
                     <ul class="link-list">
                         <li><a href="#">Latest Events</a></li>
                         <li><a href="#">Terms and conditions</a></li>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-3 col-sm-3">
                 <div class="widget">
-                    <h5 class="widgetheading">Latest posts</h5>
+                    <h5 class="widgetheading"><?= \Yii::t('app', 'Latest posts') ?></h5>
                     <ul class="link-list">
                         <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
                         <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
@@ -38,7 +38,7 @@
             </div>
             <div class="col-md-3 col-sm-3">
                 <div class="widget">
-                    <h5 class="widgetheading">Recent News</h5>
+                    <h5 class="widgetheading"><?= \Yii::t('app', 'Recent News') ?></h5>
                     <ul class="link-list">
                         <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
                         <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
@@ -54,7 +54,7 @@
                 <div class="col-lg-6">
                     <div class="copyright">
                         <p>
-                            <span>&copy; Bootstrap Template 2017 All right reserved. Template By </span><a href="http://webthemez.com/free-bootstrap-templates/" target="_blank">WebThemez</a>
+                            <span>&copy; <?= \Yii::t('app', 'Bootstrap Template 2017 All right reserved. Template By ') ?></span><a href="http://webthemez.com/free-bootstrap-templates/" target="_blank">WebThemez</a>
                         </p>
                     </div>
                 </div>

@@ -39,6 +39,4 @@ return [
     'message' => 'email',
     'message' => 'email',
     'message' => 'email',
-    'message' => 'email',
-    'message' => 'email',
 ];

@@ -21,7 +21,7 @@ $this->title = 'About Us';
         <div class="container">
             <div class="row showcase-section">
                 <div class="col-md-6">
-                    <img src="img/dev1.png" alt="showcase image">
+                    <img src="/img/dev1.png" alt="showcase image">
                 </div>
                 <div class="col-md-6">
                     <div class="about-text">
@@ -38,7 +38,7 @@ $this->title = 'About Us';
                 <div class="col-md-4">
                     <!-- Heading and para -->
                     <div class="block-heading-two">
-                        <h3><span>Why Choose Us?</span></h3>
+                        <h3><span><?= \Yii::t('app', 'Why Choose Us?'); ?></span></h3>
                     </div>
                     <p>
                         <?= $model->leftColumn?>
@@ -46,7 +46,7 @@ $this->title = 'About Us';
                 </div>
                 <div class="col-md-4">
                     <div class="block-heading-two">
-                        <h3><span>Our Solution</span></h3>
+                        <h3><span><?= \Yii::t('app', 'Our Solution'); ?></span></h3>
                     </div>
                     <p>
                         <?= $model->centrColumn?>
@@ -54,7 +54,7 @@ $this->title = 'About Us';
                 </div>
                 <div class="col-md-4">
                     <div class="block-heading-two">
-                        <h3><span>Our Expertise</span></h3>
+                        <h3><span><?= \Yii::t('app', 'Our Expertise'); ?></span></h3>
                     </div>
                     <p>
                         <?= $model->rightColumn?>
@@ -65,7 +65,7 @@ $this->title = 'About Us';
             <!-- Our Team starts -->
             <!-- Heading -->
             <div class="block-heading-six">
-                <h4 class="bg-color">Our Team</h4>
+                <h4 class="bg-color"><?= \Yii::t('app', 'Our Team'); ?></h4>
             </div>
             <br>
             <!-- Our team starts -->
@@ -75,7 +75,7 @@ $this->title = 'About Us';
                         <!-- Team Member -->
                         <div class="team-member">
                             <!-- Image -->
-                            <img class="img-responsive" src="img/team1.jpg" alt="">
+                            <img class="img-responsive" src="/img/team1.jpg" alt="">
                             <!-- Name -->
                             <h4>Johne Doe</h4>
                             <span class="deg">Creative</span>
@@ -85,7 +85,7 @@ $this->title = 'About Us';
                         <!-- Team Member -->
                         <div class="team-member">
                             <!-- Image -->
-                            <img class="img-responsive" src="img/team2.jpg" alt="">
+                            <img class="img-responsive" src="/img/team2.jpg" alt="">
                             <!-- Name -->
                             <h4>Jennifer</h4>
                             <span class="deg">Programmer</span>
@@ -95,7 +95,7 @@ $this->title = 'About Us';
                         <!-- Team Member -->
                         <div class="team-member">
                             <!-- Image -->
-                            <img class="img-responsive" src="img/team3.jpg" alt="">
+                            <img class="img-responsive" src="/img/team3.jpg" alt="">
                             <!-- Name -->
                             <h4>Christean</h4>
                             <span class="deg">CEO</span>
@@ -105,7 +105,7 @@ $this->title = 'About Us';
                         <!-- Team Member -->
                         <div class="team-member">
                             <!-- Image -->
-                            <img class="img-responsive" src="img/team4.jpg" alt="">
+                            <img class="img-responsive" src="/img/team4.jpg" alt="">
                             <!-- Name -->
                             <h4>Kerinele rase</h4>
                             <span class="deg">Manager</span>
