@@ -25,6 +25,7 @@ use yii\bootstrap\NavBar;
                         ['label' => \Yii::t('app', 'Home'), 'url' => ['site/index']],
                         ['label' => \Yii::t('app', 'About'), 'url' => ['site/about']],
                         ['label' => \Yii::t('app', 'Contact'), 'url' => ['site/contact']],
+                        ['label' => \Yii::t('app', 'Blog'), 'url' => ['blog/index']],
 
                     ],
                 ]);

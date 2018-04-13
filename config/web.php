@@ -80,6 +80,7 @@ $config = [
                 'index' => 'site/index',
                 'admin/login' => 'admin/login/login',
                 'admin/admin-logout' => 'admin/login/admin-logout',
+                'blog' => 'blog/index',
 //                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
