@@ -1,0 +1,429 @@
+/* TOP BACKGROUND */
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Container-fluid - .single-bg
+	1.1 Top Row - .single-bg h2
+	1.2 Bottom Row - single-bg a
+-------------------------------------------------------------------*/
+
+.single-bg {
+	width: 100%;
+	height: 300px;
+	background: url('../images/1280x853.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	margin-top: -60px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.single-bg h2 {
+	color: white;
+	font-family: Roboto;
+	font-weight: 700;
+	font-size: 50px;
+	margin-top: 130px;
+	padding: 0px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+
+.single-bg a {
+	font-family: Raleway;
+	font-weight: 400;
+	color: white;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.single-bg a:nth-of-type(2) {
+	background: rgba(57, 176, 113, 0.6);
+	padding: 8px 10px 8px 10px;
+}
+
+.single-bg a:hover, .single-bg a:focus, .single-bg a:active {
+	text-decoration: none;
+	color: white;
+}
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Container - .single_blog_content
+	1.1 Left Column
+		1.1.1 First Row - .left_content img
+		1.1.2 Second Row - .left_content h2, .left_content h3, left_content p
+		1.1.3 Third Row - .share_blog
+			1.1.3.1 Top Row - .share_blog h2
+			1.1.3.2 Bottom Row - .share_blog_img img
+		1.1.4 Fourth Row - .comments
+			1.1.4.1 Top - .comments h2
+			1.1.4.2 Bottom/Left - .user_info img
+			1.1.4.3 Bottom/Right - .user_info h2, .user_info p
+		1.1.5 Fifth Row - .comment_input
+			1.1.5.1 Top - .comment_input h2
+			1.1.5.2 Bottom - .single_blog_input
+	1.2 Right Column - .right_content
+		1.2.1 Top Row - .recent_posts
+			1.2.1.1 First - .recent_posts h2
+			1.2.1.2 Second/Left .recent_info img
+			1.2.1.3 Second/Right .recent_info h3, recent_info p
+		1.2.2 Middle Row - .category
+			1.2.2.1 First - .category h2
+			1.2.2.2 Second - .category p
+		1.2.3 Bottom Row - .tags
+			1.2.3.1 First - .tags h2
+			1.2.3.2 Second - .tags a, .tags p
+-------------------------------------------------------------------*/
+
+.left_content img {
+	width: 95%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.left_content h2 {
+	font-family: Roboto;
+	font-weight: 700;
+	color: #212121;
+	font-size: 30px;
+	margin-left: 15px;
+	padding-right: 25px;
+	text-transform: uppercase;
+	padding-top: 10px;
+}
+
+.left_content h3 {
+	margin-left: 15px;
+	margin-right: 15px;
+	font-family: Raleway;
+	font-weight: 400;
+	color: #535353;
+	font-size: 18px;
+}
+
+.left_content p {
+	margin-left: 15px;
+	margin-right: 15px;
+	font-family: Raleway;
+	font-weight: 400;
+	color: #535353;
+	font-size: 15px;
+	padding-top: 10px;
+	line-height: 170%;
+	padding-bottom: 20px;
+}
+
+.i {
+	color: grey;
+	font-family: Raleway;
+}
+
+.share_blog h2 {
+	font-family: Roboto;
+	font-weight: 400;
+	color: #212121;
+	font-size: 20px;
+	margin-top: 0px;
+}
+
+.share_blog_img {
+	margin-left: -10px;
+	padding-top: 5px;
+}
+
+.share_blog_img img {
+	width: 100px;
+	opacity: 0.5;
+	margin-left: 10px;
+	margin-bottom: 15px;
+}
+
+.share_blog_img img:hover {
+	opacity: 1;
+}
+
+.right_content {
+	width: 100%;
+	height: auto;
+	background: #FAFAFA;
+}
+
+.right_content h2 {
+	padding-top: 25px;
+	padding-left: 25px;
+	font-family: Roboto;
+	font-weight: 400;
+	color: #212121;
+	padding-bottom: 25px;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.recent_posts h2 {
+	padding-bottom: 10px;
+}
+
+.recent_posts {
+	margin-top: -20px;
+}
+
+.recent_posts hr {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+.recent_info {
+	padding-bottom: 20px;
+}
+
+.recent_info:hover {
+	text-decoration: underline;
+}
+
+.recent_info img {
+	width: 80px;
+	margin-left: 25px;
+}
+
+.recent_info h3 {
+	font-family: Roboto;
+	font-weight: 400;
+	color: #212121;
+	font-size: 18px;
+	margin-left: 125px;
+	margin-top: -50px;
+	padding-right: 10px;
+}
+
+.recent_info p {
+	margin-left: 125px;
+	margin-top: -7px;
+	font-family: Raleway;
+	font-size: 16px;
+	color: #5E5E5E;
+	padding-right: 10px;
+}
+
+.category {
+	margin-top: 35px !important;
+	padding-bottom: 5px;
+}
+
+.category p {
+	margin-left: 25px;
+	margin-right: 25px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-family: Raleway;
+	font-weight: 400;
+	font-size: 16px;
+	color: #5E5E5E;
+	transition: color .3s ease;
+}
+
+.category p:hover {
+	color: #32C775;
+}
+
+.category hr {
+	margin-top: 0px;
+	width: 90%;
+	display: block;
+	margin-left: 15px;
+	margin-bottom: 0px;
+}
+
+.category i {
+	padding-right: 10px;
+}
+
+.tags {
+	background: none;
+	margin-left: -15px;
+	margin-top: 20px;
+}
+
+.tags h2 {
+	margin-left: -10px;
+	margin-bottom: -10px;
+}
+
+.tags p {
+	font-family: Roboto;
+	font-weight: 400;
+	color: #5E5E5E;
+	margin-left: 15px;
+	display: inline-block;
+	border: 1px solid #5E5E5E;
+	padding: 10px;
+	margin-bottom: 20px;
+	transition: background .3s ease;
+}
+
+.tags p:hover {
+	color: white;
+	background: #32C775;
+	border: 1px solid #32C775;
+}
+
+.comments h2 {
+	font-family: Roboto;
+	font-weight: 400;
+	font-size: 23px;
+	color: #212121;
+	padding-top: 20px;
+	padding-bottom: 15px;
+}
+
+.user_info {
+	margin-bottom: 30px;
+}
+
+.user_info img {
+	width: 70px;
+}
+
+.user_info h3 {
+	font-family: Roboto;
+	font-weight: 400;
+	color: #212121;
+	font-size: 18px;
+	margin-left: 90px;
+	margin-top: -70px;
+}
+
+.user_info p {
+	margin-left: 90px;
+	margin-top: -5px;
+	font-family: Raleway;
+	font-weight: 400;
+	color: #5E5E5E;
+	font-size: 16px;
+}
+
+.comments hr {
+	margin-top: 0px;
+	margin-bottom: 35px;
+}
+
+.comment_input {
+	width: 100%;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.comment_input h2 {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-family: Roboto;
+	font-weight: 400;
+	font-size: 23px;
+	color: #212121;
+}
+
+.single_blog_input {
+	width: 100%;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.single_blog_input input {
+	width: 100%;
+	height: 40px;
+	outline: none;
+	background: none;
+	border: 1px solid #C7C7C7;
+	padding-left: 10px;
+	padding-right: 10px;
+	transition: border .3s ease;
+	color: #5E5E5E;
+	font-family: Raleway;
+	font-weight: 400;
+}
+
+.single_blog_input input:focus {
+	border: 1px solid #212121;
+}
+
+.single_blog_input textarea {
+	width: 100%;
+	height: 200px;
+	resize: none;
+	outline: none;
+	background: none;
+	border: 1px solid #C7C7C7;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+	transition: border .3s ease;
+	color: #5E5E5E;
+	font-family: Raleway;
+	font-weight: 400;
+	margin-top: 20px;
+}
+
+.single_blog_input textarea:focus {
+	border: 1px solid #212121;
+}
+
+.send_comment input {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	transition: background .3s ease;
+}
+
+.send_comment input:hover {
+	border: none;
+	background: #212121;
+	color: white;
+}
+
+
+/*================================================== TABLET QUERY ==================*/
+
+@media only screen and (max-width: 992px) {
+	.email_single_blog {
+		margin-top: 15px;
+	}
+}
+
+
+/*================================================== MOBILE QUERY ==================*/
+
+@media only screen and (max-width: 767px) {
+	.single_blog_input textarea {
+		margin-top: 15px !important;
+	}
+	.single-bg h2 {
+		margin-top: 100px;
+	}
+}
+
+
+/*================================================== RETINA ==================*/
+
+@media only screen and (max-width: 350px) {
+	.user_info h3 {
+		margin-left: 0;
+		margin-top: 10px;
+	}
+	.user_info p {
+		margin-left: 0;
+	}
+}
