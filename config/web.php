@@ -75,12 +75,15 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'admin/post/<alias:\w+>' => 'admin/blog/post',
                 'about' => 'site/about',
                 'contact' => 'site/contact',
                 'index' => 'site/index',
                 'admin/login' => 'admin/login/login',
                 'admin/admin-logout' => 'admin/login/admin-logout',
+
                 'blog' => 'blog/index',
+
 //                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
