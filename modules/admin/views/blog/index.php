@@ -6,14 +6,18 @@
  * Time: 16:15
  */
 
-
+$this->title = 'Blog';
 ?>
 
 
 <?php foreach ($model as $one) { ?>
-    <h3><a href="<?php echo \yii\helpers\Url::to(['/admin/blog/post/', 'alias' => $one->alias]) ?>"><?= $one->name->translate ?>1</a></h3>
-<!--    --><?php //echo "<pre>"; print_r($one); die; ?>
+    <h3>
+        <a href="<?php echo \yii\helpers\Url::to(['/admin/blog/post/', 'alias' => $one->alias]) ?>">
+            <?= $one->name->translate ?>
+        </a>
+    </h3>
     <p>Summary <?= $one->summary->translate ?></p>
-    <p>Text <?= $one->text->translate ?></p>
+    <p><a href='<?php echo \yii\helpers\Url::to(['/admin/blog/edit', 'alias' => $one->alias]) ?>'>Edit</a></p>
 
 <?php } ?>
+<p><a href='<?php echo \yii\helpers\Url::to(['/admin/blog/add']) ?>'>Add</a></p>

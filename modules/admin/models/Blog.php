@@ -11,6 +11,7 @@ namespace app\modules\admin\models;
 
 use yii\db\ActiveRecord;
 use app\modules\admin\models\Translate;
+use yii\helpers\ArrayHelper;
 
 class Blog extends ActiveRecord {
 
@@ -18,17 +19,25 @@ class Blog extends ActiveRecord {
     public $text;
     public $summary;
     public $name;
+    public $nameAuthor;
+//    public $active;
 
     public static function tableName() {
         return '{{%postBlog}}';
     }
 
+    public function rules() {
+        return [
+            [['idAuthor', 'id_tag', 'id_category'], 'required'],
+            [['active'], 'required'],
+            [['idAuthor', 'id_tag', 'id_category'], 'integer'],
+            ['active', 'integer'],
+        ];
+    }
+
     public function getPosts() {
         return self::find()
-//            ->select(array( self::tableName().'.*'))
-//            ->leftJoin('{{%translate}}', '{{%translate}}.id_post = '.self::tableName().'.id')
             ->joinWith('translate')
-//            ->with('translate')
             ->where([
                 self::tableName().'.active' => self::STATUS_ACTIVE,
                 Translate::tableName().'.language' => 'en'
@@ -38,8 +47,32 @@ class Blog extends ActiveRecord {
             ->all();
     }
 
+    public function getPost($alias) {
+        return self::find()
+            ->joinWith('translate')
+            ->joinWith('userData')
+            ->where([
+                self::tableName().'.active' => self::STATUS_ACTIVE,
+                Translate::tableName().'.language' => 'en',
+                self::tableName().'.alias' => $alias,
+            ])
+            ->all();
+
+    }
+
+    public static function findByAlias($alias) {
+        return static::findOne(['alias' => $alias]);
+    }
+
     public function getTranslate() {
         return $this->hasMany(Translate::className(), ['id_post' => 'id']);
     }
+
+    public function getUserData() {
+        return $this->hasOne(UserData::className(), ['id_user' => 'idAuthor']);
+    }
+
+    public function getNameAuthor() {
+        return ArrayHelper::getValue($this, 'userData.name'). ' ' .ArrayHelper::getValue($this, 'userData.soname');
+    }
 }
-//Translate::tableName().'.*',
