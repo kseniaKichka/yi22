@@ -16,9 +16,10 @@ use yii\helpers\ArrayHelper;
 class Blog extends ActiveRecord {
 
     const STATUS_ACTIVE = 1;
-    public $text;
-    public $summary;
-    public $name;
+    const STATUS_NOT_ACTIVE = 0;
+//    public $text;
+//    public $summary;
+//    public $name;
     public $nameAuthor;
 //    public $active;
 
@@ -28,9 +29,9 @@ class Blog extends ActiveRecord {
 
     public function rules() {
         return [
-            [['idAuthor', 'id_tag', 'id_category'], 'required'],
+            [['idAuthor', 'id_category'], 'required'],
             [['active'], 'required'],
-            [['idAuthor', 'id_tag', 'id_category'], 'integer'],
+            [['idAuthor', 'id_category'], 'integer'],
             ['active', 'integer'],
         ];
     }
@@ -39,7 +40,7 @@ class Blog extends ActiveRecord {
         return self::find()
             ->joinWith('translate')
             ->where([
-                self::tableName().'.active' => self::STATUS_ACTIVE,
+//                self::tableName().'.active' => self::STATUS_ACTIVE,
                 Translate::tableName().'.language' => 'en'
             ])
 

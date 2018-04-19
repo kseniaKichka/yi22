@@ -22,16 +22,7 @@ class BlogController extends BaseController {
 
     public function actionIndex() {
         $model = new Blog();
-
         $posts = $model->getPosts();
-
-        foreach ($posts as $k => $post) {
-            $helper2 = ArrayHelper::index($post->translate, 'value');
-            $post = ArrayHelper::merge($post, $helper2);
-            $posts[$k] = $post;
-
-        }
-
         return $this->render('index', ['model' => $posts]);
     }
 
@@ -53,15 +44,12 @@ class BlogController extends BaseController {
     public function actionEdit($alias) {
 
         $blog = Blog::findByAlias($alias);
-//        $userData = UserData::findById($blog->idAuthor);
         $userData = UserData::findManager();
 
-        $blogData = Translate::findById(1);
-
-        if ($blog->load(\Yii::$app->request->post()) ) {
-            // && $userData->load(\Yii::$app->request->post())
+        $blogData = Translate::findById($blog->id);
+        if ($blog->load(\Yii::$app->request->post())  && $blogData->load(\Yii::$app->request->post())) {
             $blog->save();
-//            $blogData->save();
+            $blogData->save();
             \Yii::$app->session->setFlash('success', 'Ok');
         }
         return $this->render('edit-post', ['model' => $blog, 'blogData' => $blogData, 'userData' => $userData]);
@@ -71,13 +59,28 @@ class BlogController extends BaseController {
     public function actionAdd() {
 
         $blog = new Blog();
-        $userData = new UserData();
-
-        if ($blog->load(\Yii::$app->request->post()) && $blog->save()) {
-
+        $blogData = new Translate();
+        $userData = UserData::findManager();
+        if ($blog->load(\Yii::$app->request->post())  && $blogData->load(\Yii::$app->request->post())) {
+            $blog->alias = str_replace(' ', '_', strtolower($blogData->title));
+            $blog->save();
+            $blog->link('translate', $blogData);
+            $blogData->save();
             \Yii::$app->session->setFlash('success', 'Ok');
         }
-        return $this->render('edit-post', ['model' => $blog]);
+        return $this->render('edit-post', ['model' => $blog, 'blogData' => $blogData, 'userData' => $userData]);
 
+    }
+
+    public function actionDelete($alias) {
+        $model = new Blog();
+
+        $posts = $model->getPosts();
+        if ($blog = Blog::findByAlias($alias)) {
+            $blog->active = Blog::STATUS_NOT_ACTIVE;
+            $blog->save();
+            \Yii::$app->session->setFlash('success', 'Ok');
+        }
+        return $this->render('index', ['model' => $posts]);
     }
 }

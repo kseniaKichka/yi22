@@ -13,19 +13,18 @@ use yii\db\ActiveRecord;
 
 class Translate extends ActiveRecord {
 
-    public $name;
-    public $summary;
-    public $text;
-    const FIELD_NAME = 'name';
-    const FIELD_SUMMARY = 'summary';
-    const FIELD_TEXT = 'text';
+//    public $name;
+//    public $summary;
+//    public $text;
 
     public function rules() {
         return [
-            [['name', 'summary', 'text'], 'required'],
-            ['translate', 'string'],
+            [['title', 'summary', 'text'], 'required'],
+            ['title', 'string'],
             ['language', 'string'],
-            ['value', 'string'],
+            ['language', 'default', 'value' => 'en'],
+            ['summary', 'string'],
+            ['text', 'string'],
             ['id_post', 'integer'],
         ];
     }
@@ -35,7 +34,7 @@ class Translate extends ActiveRecord {
     }
 
     public static function findById($id) {
-        return static::findAll(['id_post' => $id]);
+        return static::findOne(['id_post' => $id]);
     }
 
     public static function findNameById($id) {

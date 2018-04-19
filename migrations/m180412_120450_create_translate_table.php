@@ -14,7 +14,6 @@ class m180412_120450_create_translate_table extends Migration
     {
         $this->createTable('translate', [
             'id' => $this->primaryKey(),
-            'translate' => $this->text(),
             'language' => $this->char(40),
             'id_post' => $this->integer(),
         ]);
