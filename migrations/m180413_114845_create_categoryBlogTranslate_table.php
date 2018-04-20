@@ -15,7 +15,8 @@ class m180413_114845_create_categoryBlogTranslate_table extends Migration
         $this->createTable('{{%categoryBlogTranslate}}', [
             'id' => $this->primaryKey(),
             'language' => $this->char(20),
-            'value' => $this->text(),
+            'title' => $this->char(40),
+            'summary' => $this->char(200),
             'id_category' => $this->integer(),
         ]);
 
