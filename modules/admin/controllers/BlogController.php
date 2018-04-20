@@ -11,6 +11,8 @@ namespace app\modules\admin\controllers;
 
 use app\modules\admin\models\Blog;
 use app\modules\admin\models\BlogForm;
+use app\modules\admin\models\Tag;
+use app\modules\admin\models\TagTranslate;
 use app\modules\admin\models\Translate;
 use app\modules\admin\models\UserData;
 use yii\helpers\ArrayHelper;
@@ -45,14 +47,21 @@ class BlogController extends BaseController {
 
         $blog = Blog::findByAlias($alias);
         $userData = UserData::findManager();
-
+        $tagTranslate = TagTranslate::findManager();
+//        echo "<pre>"; print_r($tag); die;
         $blogData = Translate::findById($blog->id);
         if ($blog->load(\Yii::$app->request->post())  && $blogData->load(\Yii::$app->request->post())) {
             $blog->save();
+//            var_dump($blog); die;
             $blogData->save();
             \Yii::$app->session->setFlash('success', 'Ok');
         }
-        return $this->render('edit-post', ['model' => $blog, 'blogData' => $blogData, 'userData' => $userData]);
+        return $this->render('edit-post', [
+            'model' => $blog,
+            'blogData' => $blogData,
+            'userData' => $userData,
+            'tagTranslate' => $tagTranslate
+        ]);
 
     }
 
@@ -80,6 +89,7 @@ class BlogController extends BaseController {
             $blog->active = Blog::STATUS_NOT_ACTIVE;
             $blog->save();
             \Yii::$app->session->setFlash('success', 'Ok');
+            return $this->refresh('index');
         }
         return $this->render('index', ['model' => $posts]);
     }
