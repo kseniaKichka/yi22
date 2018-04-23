@@ -36,7 +36,7 @@ $this->title = "Edit Page About";
                     <?= $form->field($model, 'id_tag')->dropDownList(\yii\helpers\ArrayHelper::map($tagTranslate,'id_tag', 'title')); ?>
                 </div>
                 <div class="controls">
-                    <?= $form->field($model, 'id_category')->textarea(['rows' => '8', 'class' => 'span6']) ?>
+                    <?= $form->field($model, 'id_category')->dropDownList(\yii\helpers\ArrayHelper::map($categoryTranslate,'id_category', 'title')); ?>
                 </div>
                 <div class="controls">
                     <?= $form->field($blogData, 'summary')->textarea(['rows' => '8', 'class' => 'span6']) ?>
