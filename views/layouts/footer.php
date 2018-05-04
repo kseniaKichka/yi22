@@ -5,6 +5,7 @@
                 <div class="widget">
                     <h5 class="widgetheading"><?= \Yii::t('app', 'Our Contact') ?></h5>
                     <address>
+                        <a href="http://rewardbucks.local.com/" target="_blank">Click</a>
                         <strong>Bootstrap company Inc</strong><br>
                         JC Main Road, Near Silnile tower<br>
                         Pin-21542 NewYork US.</address>
