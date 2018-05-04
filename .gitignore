@@ -18,3 +18,4 @@ vendor/*
 /vendor/composer/installed.json
 /.idea/php.xml
 /.idea/workspace.xml
+/web/info.php
