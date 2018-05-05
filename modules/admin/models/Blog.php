@@ -9,6 +9,7 @@
 namespace app\modules\admin\models;
 
 
+use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use app\modules\admin\models\Translate;
 use yii\helpers\ArrayHelper;
@@ -17,11 +18,7 @@ class Blog extends ActiveRecord {
 
     const STATUS_ACTIVE = 1;
     const STATUS_NOT_ACTIVE = 0;
-//    public $text;
-//    public $summary;
-//    public $name;
     public $nameAuthor;
-//    public $active;
 
     public static function tableName() {
         return '{{%postBlog}}';
@@ -40,12 +37,35 @@ class Blog extends ActiveRecord {
         return self::find()
             ->joinWith('translate')
             ->where([
-//                self::tableName().'.active' => self::STATUS_ACTIVE,
                 Translate::tableName().'.language' => 'en'
             ])
 
             ->orderBy(self::tableName().'.dateCreated ASC')
             ->all();
+    }
+
+    public function search($params) {
+        $query =  self::find()
+            ->joinWith('translate')
+            ->where([
+                Translate::tableName().'.language' => 'en'
+            ])
+
+            ->orderBy(self::tableName().'.dateCreated ASC')
+            ->all();
+
+        $provider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'created_at' => SORT_DESC,
+                    'title' => SORT_ASC,
+                ]
+            ],
+        ]);
     }
 
     public function getPost($alias) {

@@ -11,6 +11,7 @@ namespace app\modules\admin\controllers;
 
 use app\modules\admin\models\Blog;
 use app\modules\admin\models\BlogForm;
+use app\modules\admin\models\CategoryTranslate;
 use app\modules\admin\models\Tag;
 use app\modules\admin\models\TagTranslate;
 use app\modules\admin\models\Translate;
@@ -48,6 +49,7 @@ class BlogController extends BaseController {
         $blog = Blog::findByAlias($alias);
         $userData = UserData::findManager();
         $tagTranslate = TagTranslate::findManager();
+        $categoryTranslate = CategoryTranslate::findManager();
         $blogData = Translate::findById($blog->id);
         if ($blog->load(\Yii::$app->request->post())  && $blogData->load(\Yii::$app->request->post())) {
             $blog->save();
@@ -58,7 +60,8 @@ class BlogController extends BaseController {
             'model' => $blog,
             'blogData' => $blogData,
             'userData' => $userData,
-            'tagTranslate' => $tagTranslate
+            'tagTranslate' => $tagTranslate,
+            'categoryTranslate' => $categoryTranslate
         ]);
 
     }

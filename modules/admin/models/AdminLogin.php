@@ -34,8 +34,7 @@ class AdminLogin extends Model {
     
     public function login() {
         $this->duration = $this->rememberMe ? (1 * 60) : 0;
-        if ($this->validate()) {
-
+        if ($this->validate() && $this->getUser()) {
                 return \Yii::$app->user->login($this->getUser(), $this->duration);
         }
         return false;
