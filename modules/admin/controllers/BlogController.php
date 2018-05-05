@@ -70,6 +70,8 @@ class BlogController extends BaseController {
 
         $blog = new Blog();
         $blogData = new Translate();
+        $tagTranslate = TagTranslate::findManager();
+        $categoryTranslate = CategoryTranslate::findManager();
         $userData = UserData::findManager();
         if ($blog->load(\Yii::$app->request->post())  && $blogData->load(\Yii::$app->request->post())) {
             $blog->alias = str_replace(' ', '_', strtolower($blogData->title));
@@ -78,7 +80,13 @@ class BlogController extends BaseController {
             $blogData->save();
             \Yii::$app->session->setFlash('success', 'Ok');
         }
-        return $this->render('edit-post', ['model' => $blog, 'blogData' => $blogData, 'userData' => $userData]);
+        return $this->render('edit-post', [
+            'model' => $blog,
+            'blogData' => $blogData,
+            'userData' => $userData,
+            'tagTranslate' => $tagTranslate,
+            'categoryTranslate' => $categoryTranslate
+        ]);
 
     }
 

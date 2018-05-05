@@ -33,7 +33,7 @@ $this->title = "Edit Page About";
                     <?= $form->field($model, 'idAuthor')->dropDownList(\yii\helpers\ArrayHelper::map($userData,'id_user', 'soname')); ?>
                 </div>
 <!--                <div class="controls">-->
-<!--                    --><?//= $form->field($model, 'id_tag')->dropDownList(\yii\helpers\ArrayHelper::map($blog,'id_tag', 'soname')); ?>
+<!--                    --><?php // $form->field($model, 'id_tag')->dropDownList(\yii\helpers\ArrayHelper::map($blog,'id_tag', 'soname')); ?>
 <!--                </div>-->
                 <div class="controls">
                     <?= $form->field($tagData, 'summary')->textarea(['rows' => '8', 'class' => 'span6']) ?>
