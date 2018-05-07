@@ -17,7 +17,7 @@ use \yii\helpers\Url;
                 <img src="blog/images/640x418.jpg" alt="">
                 <?php foreach ($model->translate as $translate): ?>
                 <h2><?= $translate->title ?></h2>
-                <h3><?= Yii::$app->formatter->asDate($model->dateCreated, 'long') ?></h3>
+                <h3><?= $model->getDate(); ?></h3>
                 <p> <?= $translate->summary ?></p>
                 <?php endforeach; ?>
                 <button onclick="window.location.href='<?= Url::to(["/blog/post", 'alias' => $model->alias]); ?>'"> Read More </button>
