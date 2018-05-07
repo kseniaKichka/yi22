@@ -6,49 +6,30 @@
  * Time: 14:04
  */
 use \yii\helpers\Url;
+
 ?>
 
 <div class="container show_button">
     <div class="row blog_posts_row">
         <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 bolg_posts_left">
+            <?php foreach ($models as $model): ?>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog_posts_post">
                 <img src="blog/images/640x418.jpg" alt="">
-                <h2>Learn HTML Basics</h2>
-                <h3>Samantha Gray on 21 Jan 2017</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipiscing. Aliquam rhoncus ipsum ac lacus ultrices<br>
-                    nec aliquam magna ultricies. Etiam vitae leo urna. Sed non vestibulum nisl non finibus nulla.<br>
-                    Maecenas blandit dui mattis ullamcorper est sed pulvinar sapien.<br>
-                    Vestibulum laoreet mauris eu viverra tincidunt<br>
-                    orci justo congue libero, vitae gravida.....
-                </p>
-                <button onclick="window.location.href='<?= Url::to(["/blog/post"]); ?>'"> Read More </button>
+                <?php foreach ($model->translate as $translate): ?>
+                <h2><?= $translate->title ?></h2>
+                <h3><?= Yii::$app->formatter->asDate($model->dateCreated, 'long') ?></h3>
+                <p> <?= $translate->summary ?></p>
+                <?php endforeach; ?>
+                <button onclick="window.location.href='<?= Url::to(["/blog/post", 'alias' => $model->alias]); ?>'"> Read More </button>
                 <hr>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog_posts_post">
-                <img src="blog/images/640x418.jpg" alt="">
-                <h2>Learn CSS Basics</h2>
-                <h3>Samantha Gray on 21 Jan 2017</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipiscing. Aliquam rhoncus ipsum ac lacus ultrices<br>
-                    nec aliquam magna ultricies. Etiam vitae leo urna. Sed non vestibulum nisl non finibus nulla.<br>
-                    Maecenas blandit dui mattis ullamcorper est sed pulvinar sapien.<br>
-                    Vestibulum laoreet mauris eu viverra tincidunt<br>
-                    orci justo congue libero, vitae gravida.....
-                </p>
-                <button onclick="window.location.href='<?= Url::to(["/blog/post"]); ?>'"> Read More </button>
-                <hr>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog_posts_post">
-                <img src="blog/images/640x418.jpg" alt="">
-                <h2>Learn WordPress Basics</h2>
-                <h3>Samantha Gray on 21 Jan 2017</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipiscing. Aliquam rhoncus ipsum ac lacus ultrices<br>
-                    nec aliquam magna ultricies. Etiam vitae leo urna. Sed non vestibulum nisl non finibus nulla.<br>
-                    Maecenas blandit dui mattis ullamcorper est sed pulvinar sapien.<br>
-                    Vestibulum laoreet mauris eu viverra tincidunt<br>
-                    orci justo congue libero, vitae gravida....
-                </p>
-                <button onclick="window.location.href='<?= Url::to(["/blog/post"]); ?>'"> Read More </button>
-            </div>
+            <?php endforeach; ?>
+            <?php
+                echo \yii\widgets\LinkPager::widget([
+                    'pagination' => $pages,
+
+                ]);
+            ?>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 bolg_posts_right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog_posts_recent">

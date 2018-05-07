@@ -44,6 +44,16 @@ class Blog extends ActiveRecord {
             ->all();
     }
 
+    public static function getActivePosts() {
+        return self::find()
+            ->joinWith('translate')
+            ->where([
+                Translate::tableName().'.language' => 'en',
+                self::tableName().'.active' => self::STATUS_ACTIVE
+            ]);
+
+    }
+
     public function search($params) {
         $query =  self::find()
             ->joinWith('translate')
