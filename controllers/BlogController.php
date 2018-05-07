@@ -29,7 +29,7 @@ class BlogController extends Controller {
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-//var_dump($pages); die;
+
         return $this->render('index', [
             'models' => $models,
             'pages' => $pages,
@@ -37,7 +37,16 @@ class BlogController extends Controller {
     }
 
     public function actionPost($alias) {
-        return $this->render('single-post');
+
+        $post = Blog::findByAlias($alias)
+            ->with('translate')
+            ->with('userData')
+            ->active()
+            ->one();
+
+        return $this->render('single-post', [
+            'post' => $post
+        ]);
     }
 
     public function actionCategory() {

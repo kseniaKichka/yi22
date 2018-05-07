@@ -9,6 +9,7 @@
 namespace app\modules\admin\models;
 
 
+use app\models\query\BlogQuery;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use app\modules\admin\models\Translate;
@@ -22,6 +23,10 @@ class Blog extends ActiveRecord {
 
     public static function tableName() {
         return '{{%postBlog}}';
+    }
+
+    public static function find() {
+        return new BlogQuery(get_called_class());
     }
 
     public function rules() {
@@ -92,7 +97,7 @@ class Blog extends ActiveRecord {
     }
 
     public static function findByAlias($alias) {
-        return static::findOne(['alias' => $alias]);
+        return static::find(['alias' => $alias]);
     }
 
     public function getTranslate() {

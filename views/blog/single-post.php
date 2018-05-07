@@ -13,28 +13,12 @@ use \yii\helpers\Url;
         <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
             <div class="row left_content">
                 <img src="blog/images/640x418.jpg" alt="">
-                <h2>Learn HTML Basics</h2>
-                <h3>Posted by John Doe on 21 January</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipiscing. Aliquam rhoncus ipsum ac lacus ultrices<br>
-                    nec aliquam magna ultricies. Etiam vitae leo urna. Sed non vestibulum nisl non finibus nulla.<br>
-                    Maecenas blandit dui mattis ullamcorper est sed pulvinar sapien.<br>
-                    Vestibulum laoreet mauris eu viverra tincidunt<br>
-                    orci justo congue libero, vitae gravida.
-                    <br>
-                    <br>
-                    <i class="i"> Lorem ipsum dolor sit amet consectetur adipiscing. Aliquam rhoncus ipsum ac lacus ultrices<br>
-                        nec aliquam magna ultricies. Etiam vitae leo urna. Sed non vestibulum nisl non finibus nulla.<br>
-                        Maecenas blandit dui mattis ullamcorper est sed pulvinar sapien.<br>
-                        Vestibulum laoreet mauris eu viverra tincidunt<br>
-                        orci justo congue libero, vitae gravida.</i>
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipiscing. Aliquam rhoncus ipsum ac lacus ultrices<br>
-                    nec aliquam magna ultricies. Etiam vitae leo urna. Sed non vestibulum nisl non finibus nulla.<br>
-                    Maecenas blandit dui mattis ullamcorper est sed pulvinar sapien.<br>
-                    Vestibulum laoreet mauris eu viverra tincidunt<br>
-                    orci justo congue libero, vitae gravida.
+                <?php foreach ($post->translate as $one): ?>
+                <h2><?= $one->title ?></h2>
+                <h3>Posted by <?= $post->userData->name ?> <?= $post->userData->soname ?> on <?= Yii::$app->formatter->asDate($post->dateCreated, 'long') ?></h3>
+                <p> <?= $one->text ?>
                 </p>
+                <?php endforeach; ?>
             </div>
             <div class="share_blog">
                 <h2>Share via:</h2>
