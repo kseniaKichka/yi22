@@ -5,14 +5,14 @@
  * Date: 13.04.18
  * Time: 13:35
  */
-
+use \yii\helpers\Url;
 ?>
 
 <div class="container-fluid footer ">
     <div class="container f">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 about-footer">
-                <img src="images/logo.gif" alt="logo">
+                <img src="blog/images/logo.gif" alt="logo">
                 <hr>
                 <p>Vivamus feugiat eros sed orci ornare, eget dapibus<br>
                     enim sodales. Nunc at posuere augue.<br>
@@ -25,23 +25,23 @@
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 recent-footer">
                 <h2>Recent Posts</h2>
                 <hr>
-                <a href="single_blog.html">
+                <a href="<?= Url::to(['/blog/post']); ?>">
                     <section>
-                        <img src="images/640x640.jpg" alt="">
+                        <img src="blog/images/640x640.jpg" alt="">
                         <h3>Recent Work</h3>
                         <p>Vivamus feugiat eros sed orci ornare<br> eget dapibus enim sodales.</p>
                     </section>
                 </a>
-                <a href="single_blog.html">
+                <a href="<?= Url::to(['/blog/post']); ?>">
                     <section>
-                        <img src="images/640x640.jpg" alt="">
+                        <img src="blog/images/640x640.jpg" alt="">
                         <h3>Recent Work</h3>
                         <p>Vivamus feugiat eros sed orci ornare<br> eget dapibus enim sodales.</p>
                     </section>
                 </a>
-                <a href="single_blog.html">
+                <a href="<?= Url::to(['/blog/post']); ?>">
                     <section>
-                        <img src="images/640x640.jpg" alt="">
+                        <img src="blog/images/640x640.jpg" alt="">
                         <h3>Recent Work</h3>
                         <p>Vivamus feugiat eros sed orci ornare<br> eget dapibus enim sodales.</p>
                     </section>

@@ -5,7 +5,7 @@
  * Date: 13.04.18
  * Time: 13:37
  */
-
+use \yii\helpers\Url;
 ?>
 
 <!--   Blog Posts Contianer   -->
@@ -13,6 +13,6 @@
     <h2>
         Blog Posts
     </h2>
-    <a href="index.html">Home /</a>
-    <a href="#">Blog Posts</a>
+    <a href="<?= Url::to(['/site/index']); ?>">Home /</a>
+    <a href="<?= Url::to(['/blog/index']); ?>">Blog Posts</a>
 </div>

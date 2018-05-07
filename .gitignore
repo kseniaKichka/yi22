@@ -18,3 +18,4 @@ vendor/*
 /.idea/workspace.xml
 /web/info.php
 /web/uploads/
+/web/blog/images/

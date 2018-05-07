@@ -22,4 +22,8 @@ class BlogController extends Controller {
     public function actionPost() {
         return $this->render('single-post');
     }
+
+    public function actionCategory() {
+        return $this->render('category');
+    }
 }
