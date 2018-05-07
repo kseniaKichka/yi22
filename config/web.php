@@ -73,7 +73,7 @@ $config = [
             'languages' => ['ru', 'en'],
             'enableDefaultLanguageUrlCode' => true,
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
+//            'showScriptName' => false,
             'rules' => [
                 'admin/post/<alias:\w+>' => 'admin/blog/post',
                 'post/edit/<alias:\w+>' => 'admin/blog/edit',
@@ -92,9 +92,10 @@ $config = [
                 'index' => 'site/index',
                 'admin/login' => 'admin/login/login',
                 'admin/admin-logout' => 'admin/login/admin-logout',
-
+//                'blog/post/<alias>' => 'blog/post',
                 'blog' => 'blog/index',
-
+                '<controller:\w+>/page/<page:\d+>' => '<controller>/index',
+                '<controller:\w+>' => '<controller>/index',
 //                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
