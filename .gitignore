@@ -19,3 +19,4 @@ vendor/*
 /web/info.php
 /web/uploads/
 /web/blog/images/
+/composer.lock
