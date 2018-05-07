@@ -15,7 +15,7 @@ use \yii\helpers\Url;
                 <img src="blog/images/640x418.jpg" alt="">
                 <?php foreach ($post->translate as $one): ?>
                 <h2><?= $one->title ?></h2>
-                <h3>Posted by <?= $post->userData->name ?> <?= $post->userData->soname ?> on <?= Yii::$app->formatter->asDate($post->dateCreated, 'long') ?></h3>
+                <h3>Posted by <?= $post->getFullName() ?> on <?= $post->getDate(); ?></h3>
                 <p> <?= $one->text ?>
                 </p>
                 <?php endforeach; ?>

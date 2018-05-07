@@ -8,7 +8,7 @@
 
 namespace app\modules\admin\models;
 
-
+use Yii;
 use app\models\query\BlogQuery;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
@@ -110,5 +110,13 @@ class Blog extends ActiveRecord {
 
     public function getNameAuthor() {
         return ArrayHelper::getValue($this, 'userData.name'). ' ' .ArrayHelper::getValue($this, 'userData.soname');
+    }
+
+    public function getDate() {
+        return Yii::$app->formatter->asDate($this->dateCreated, 'long');
+    }
+
+    public function getFullName() {
+        return $this->userData->name . ' ' . $this->userData->soname;
     }
 }
