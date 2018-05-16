@@ -6,7 +6,7 @@
  * Time: 14:04
  */
 use \yii\helpers\Url;
-
+use app\widgets\resentPosts\RecentPosts;
 ?>
 
 <div class="container show_button">
@@ -34,37 +34,38 @@ use \yii\helpers\Url;
         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 bolg_posts_right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog_posts_recent">
                 <h2>Recent Blog</h2>
-                <section class="blog_recent_info">
-                    <a href="<?= Url::to(['/blog/post']); ?>">
-                        <img src="blog/images/640x418.jpg" alt="">
-                        <h3>Learn HTML Bascis</h3>
-                        <p>20 June 2017</p>
-                    </a>
-                </section>
-                <hr>
-                <section class="blog_recent_info">
-                    <a href="<?= Url::to(['/blog/post']); ?>">
-                        <img src="blog/images/640x418.jpg" alt="">
-                        <h3>Learn CSS Bascis</h3>
-                        <p>20 June 2017</p>
-                    </a>
-                </section>
-                <hr>
-                <section class="blog_recent_info">
-                    <a href="<?= Url::to(['/blog/post']); ?>">
-                        <img src="blog/images/640x418.jpg" alt="">
-                        <h3>Learn PHP Bascis</h3>
-                        <p>20 June 2017</p>
-                    </a>
-                </section>
-                <hr>
-                <section class="blog_recent_info">
-                    <a href="<?= Url::to(['/blog/post']); ?>">
-                        <img src="blog/images/640x418.jpg" alt="">
-                        <h3>Learn WordPress Bascis</h3>
-                        <p>20 June 2017</p>
-                    </a>
-                </section>
+                <?= RecentPosts::widget(['message' => 'Good morning']) ?>
+<!--                <section class="blog_recent_info">-->
+<!--                    <a href="--><?//= Url::to(['/blog/post']); ?><!--">-->
+<!--                        <img src="blog/images/640x418.jpg" alt="">-->
+<!--                        <h3>Learn HTML Bascis</h3>-->
+<!--                        <p>20 June 2017</p>-->
+<!--                    </a>-->
+<!--                </section>-->
+<!--                <hr>-->
+<!--                <section class="blog_recent_info">-->
+<!--                    <a href="--><?//= Url::to(['/blog/post']); ?><!--">-->
+<!--                        <img src="blog/images/640x418.jpg" alt="">-->
+<!--                        <h3>Learn CSS Bascis</h3>-->
+<!--                        <p>20 June 2017</p>-->
+<!--                    </a>-->
+<!--                </section>-->
+<!--                <hr>-->
+<!--                <section class="blog_recent_info">-->
+<!--                    <a href="--><?//= Url::to(['/blog/post']); ?><!--">-->
+<!--                        <img src="blog/images/640x418.jpg" alt="">-->
+<!--                        <h3>Learn PHP Bascis</h3>-->
+<!--                        <p>20 June 2017</p>-->
+<!--                    </a>-->
+<!--                </section>-->
+<!--                <hr>-->
+<!--                <section class="blog_recent_info">-->
+<!--                    <a href="--><?//= Url::to(['/blog/post']); ?><!--">-->
+<!--                        <img src="blog/images/640x418.jpg" alt="">-->
+<!--                        <h3>Learn WordPress Bascis</h3>-->
+<!--                        <p>20 June 2017</p>-->
+<!--                    </a>-->
+<!--                </section>-->
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog_posts_category">
                 <h2>Category</h2>
